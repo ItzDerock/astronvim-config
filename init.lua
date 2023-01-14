@@ -11,6 +11,8 @@ return {
 
   plugins = {
     init = {
+      -- Copilot.nvim
+      -- run :Copilot auth to authenticate 
       {
         "zbirenbaum/copilot.lua",
         event = "VimEnter",
@@ -27,6 +29,12 @@ return {
           require("copilot_cmp").setup()
         end,
       },
+    },
+
+    -- Customize GitSigns
+    -- I like how VSC's GitLens shows current line blame
+    gitsigns = {
+      current_line_blame = true
     }
   }
 }
