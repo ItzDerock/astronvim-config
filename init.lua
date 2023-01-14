@@ -39,5 +39,19 @@ return {
         delay = 200
       }
     }
+  },
+
+  mappings = {
+    -- Normal mode
+    n = {
+      -- Toggle terminal - same keybind as VSC
+      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" }
+    },
+
+    -- Insert mode
+    i = {
+      -- Toggle terminal again
+      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" }
+    }
   }
 }
