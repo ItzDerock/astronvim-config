@@ -12,23 +12,14 @@ return {
   plugins = {
     init = {
       -- Copilot.nvim
-      -- run :Copilot auth to authenticate 
-      {
-        "zbirenbaum/copilot.lua",
-        event = "VimEnter",
-        config = function()
-          vim.defer_fn(function()
-            require("copilot").setup()
-          end, 100)
-        end,
+      -- run :Copilot setup to authenticate 
+      { 
+        "github/copilot.vim",
       },
+     -- JSDoc stuff
       {
-        "zbirenbaum/copilot-cmp",
-        after = "copilot.lua",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
+        "kkoomen/vim-doge",
+      }
     },
 
     -- Customize GitSigns
@@ -45,13 +36,21 @@ return {
     -- Normal mode
     n = {
       -- Toggle terminal - same keybind as VSC
-      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" }
+      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" },
     },
-
+  
     -- Insert mode
     i = {
-      -- Toggle terminal again
-      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" }
+      ["<tab>"] = { "copilot#Accept('<CR>')", silent = true, expr = true },
+      ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" },
+    },
+  },
+
+  options = {
+    g = {
+      copilot_no_tab_map = true,
+      copilot_assume_mapped = true,
+      copilot_tab_fallback = true
     }
   }
 }
