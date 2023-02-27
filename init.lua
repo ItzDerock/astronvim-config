@@ -41,7 +41,7 @@ return {
   
     -- Insert mode
     i = {
-      ["<tab>"] = { "copilot#Accept('<CR>')", silent = true, expr = true },
+      ["<C-e>"] = { "copilot#Accept('<CR>')", silent = true, expr = true },
       ["<C-j>"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Hide all terms" },
     },
   },
