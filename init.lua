@@ -1,6 +1,6 @@
 return {
   lsp = {
-    ["server-settings"] = {
+    ["config"] = {
       clangd = {
         capabilities = {
           offsetEncoding = "utf-8"
