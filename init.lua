@@ -12,7 +12,8 @@ return {
     -- Copilot.lua
     {
       "AstroNvim/astrocommunity",
-      { import = "astrocommunity.completion.copilot-lua-cmp" }
+      { import = "astrocommunity.completion.copilot-lua-cmp" },
+      { import = "astrocommunity.media.presence-nvim" }
     },
 
     -- Customize GitSigns
